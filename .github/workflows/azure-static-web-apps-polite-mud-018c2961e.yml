@@ -47,7 +47,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_MUD_018C2961E }}
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          app_location: "" # Set to empty because we're using pre-built files
+          app_location: "./frontend" # Set to empty because we're using pre-built files
           api_location: "" # Api source code path - optional
           output_location: "./frontend/build" # Built app content directory
           github_id_token: ${{ steps.idtoken.outputs.result }}
