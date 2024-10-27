@@ -15,6 +15,7 @@ jobs:
     permissions:
        id-token: write
        contents: read
+    environment: production # Specify the environment as production
     steps:
       - uses: actions/checkout@v3
         with:
@@ -44,7 +45,6 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
         env: # Add the env block here
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }} # Reference your secret here
-        environment: "production" # Specify the environment as production
           ###### End of Repository/Build Configurations ######
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
